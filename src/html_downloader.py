@@ -24,7 +24,7 @@ def load_credentials():
 
 def download_file(url, username, password):
     try:
-        response = requests.get(url, auth=(username, password), verify=False, stream=True)
+        response = requests.get(url, auth=(username, password), verify=True, stream=True)
         response.raise_for_status()
         return response
     except requests.RequestException as e:
